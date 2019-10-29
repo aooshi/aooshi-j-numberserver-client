@@ -97,7 +97,7 @@ public class NumberServerClient {
      * @return
      * @throws IOException
      */
-    public Boolean add(long id, long value) throws IOException {
+    public Boolean add(String id, long value) throws IOException {
         String auth = this.getAuth();
         Map<String, Object> paramMap = new HashMap<String, Object>();
         paramMap.put("id", id);
@@ -124,7 +124,7 @@ public class NumberServerClient {
      * @param value
      * @return
      */
-    public Boolean update(long id, long value) {
+    public Boolean update(String id, long value) {
         String auth = this.getAuth();
         Map<String, Object> paramMap = new HashMap<String, Object>();
         paramMap.put("id", id);
@@ -150,7 +150,7 @@ public class NumberServerClient {
      * @param id
      * @return
      */
-    public Boolean delete(long id) {
+    public Boolean delete(String id) {
         String auth = this.getAuth();
         Map<String, Object> paramMap = new HashMap<String, Object>();
         paramMap.put("id", id);
@@ -173,7 +173,7 @@ public class NumberServerClient {
      * @param id
      * @return
      */
-    public Long get(long id) {
+    public Long get(String id) {
         String auth = this.getAuth();
         String doGet = HttpClientUtils.doGet(auth, this.apiUrl + "/get?id=" + id);
         Long result = Long.valueOf(doGet);
@@ -190,7 +190,7 @@ public class NumberServerClient {
      * @param step
      * @return
      */
-    public Long increment(long id, int step) {
+    public Long increment(String id, int step) {
         String auth = this.getAuth();
         String doGet = HttpClientUtils.doGet(auth, this.apiUrl + "/increment?id=" + id + "&step=" + step);
         Long result = Long.valueOf(doGet);
@@ -206,7 +206,7 @@ public class NumberServerClient {
      * @param step
      * @return
      */
-    public Long decrement(long id, int step) {
+    public Long decrement(String id, int step) {
         String auth = this.getAuth();
         String doGet = HttpClientUtils.doGet(auth, this.apiUrl + "/decrement?id=" + id
                 + "&step=" + step);
@@ -223,7 +223,7 @@ public class NumberServerClient {
      * @param defaultValue
      * @return
      */
-    public Long getOrAdd(long id, long defaultValue) {
+    public Long getOrAdd(String id, long defaultValue) {
         String auth = this.getAuth();
         String doGet = HttpClientUtils.doGet(auth, this.apiUrl + "/getOrAdd?id=" + id
                 + "&default=" + defaultValue);
@@ -239,7 +239,7 @@ public class NumberServerClient {
      * @param step
      * @return
      */
-    public Long incrementOrAdd(long id, int step, long defaultValue) {
+    public Long incrementOrAdd(String id, int step, long defaultValue) {
         String auth = this.getAuth();
         String doGet = HttpClientUtils.doGet(auth, this.apiUrl + "/incrementOrAdd?id=" + id
                 + "&step=" + step + "&default=" + defaultValue);
@@ -255,7 +255,7 @@ public class NumberServerClient {
      * @param step
      * @return
      */
-    public Long decrementOrAdd(long id, int step, long defaultValue) {
+    public Long decrementOrAdd(String id, int step, long defaultValue) {
         String auth = this.getAuth();
         String doGet = HttpClientUtils.doGet(auth, this.apiUrl + "/decrementOrAdd?id=" + id
                 + "&step=" + step + "&default=" + defaultValue);
