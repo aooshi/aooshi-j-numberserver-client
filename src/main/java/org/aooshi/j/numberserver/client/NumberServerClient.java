@@ -277,6 +277,45 @@ public class NumberServerClient {
     }
 
     /**
+     * GET:
+     *  URL: /snowflake0
+     *
+     * @return
+     */
+    public Long snowflake0() {
+        String auth = this.getAuth();
+        String doGet = HttpClientUtils.doGet(auth, this.apiUrl + "/snowflake0");
+        Long result = Long.valueOf(doGet);
+        return result;
+    }
+
+    /**
+     * GET:
+     *  URL: /snowflake15
+     *
+     * @return
+     */
+    public Long snowflake15() {
+        String auth = this.getAuth();
+        String doGet = HttpClientUtils.doGet(auth, this.apiUrl + "/snowflake15");
+        Long result = Long.valueOf(doGet);
+        return result;
+    }
+
+    /**
+     * GET:
+     *  URL: /snowflake16
+     *
+     * @return
+     */
+    public Long snowflake16() {
+        String auth = this.getAuth();
+        String doGet = HttpClientUtils.doGet(auth, this.apiUrl + "/snowflake16");
+        Long result = Long.valueOf(doGet);
+        return result;
+    }
+
+    /**
      * get a auth from user and pass
      * @return
      */
