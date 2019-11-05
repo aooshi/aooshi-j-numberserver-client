@@ -276,18 +276,18 @@ public class NumberServerClient {
         return result;
     }
 
-    /**
-     * GET:
-     *  URL: /snowflake0
-     *
-     * @return
-     */
-    public Long snowflake0() {
-        String auth = this.getAuth();
-        String doGet = HttpClientUtils.doGet(auth, this.apiUrl + "/snowflake0");
-        Long result = Long.valueOf(doGet);
-        return result;
-    }
+//    /**
+//     * GET:
+//     *  URL: /snowflake0
+//     *
+//     * @return
+//     */
+//    public Long snowflakeE() {
+//        String auth = this.getAuth();
+//        String doGet = HttpClientUtils.doGet(auth, this.apiUrl + "/snowflake0");
+//        Long result = Long.valueOf(doGet);
+//        return result;
+//    }
 
     /**
      * GET:
